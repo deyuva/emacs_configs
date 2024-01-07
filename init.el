@@ -3,8 +3,20 @@
 ;; DATE: 29.8.23
 
 ;; =========================================================
+;; Functions:
+;; =========================================================
+
+(defun create-windows-setup ()
+  (interactive)
+  (split-window-right)
+  (toggle-frame-maximized)
+  )
+
+;; =========================================================
 ;; Package settings:
 ;; =========================================================
+
+(message "Emacs init file used: %s" user-init-file)
 
 (require 'package) ;; Emacs built-in
 
@@ -25,7 +37,7 @@
 
 ;; =========================================================
 ;; Backup settings:
-; =========================================================
+;; =========================================================
 
 (setq backup-directory-alist `(("." . "~/emacs_saves")))  ;; emacs backups will be saves to a specified location
 (setq backup-by-copying t)
@@ -53,6 +65,7 @@
   (load-theme 'timu-spacegrey t))
 ;;  (load-theme 'modus-vivendi t)
 
+(create-windows-setup)
 
 ;; =========================================================
 ;; Language support:
@@ -177,3 +190,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+
+
